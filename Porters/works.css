@@ -1,0 +1,76 @@
+/* Gap from header */
+main {
+    padding: 60px 40px 40px 60px;
+}
+
+/* Featured section styling */
+.featured h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: white;  /* White for the heading to match the general theme */
+}
+
+/* Project grid layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual project card */
+.project-card {
+    display: block;
+    background-color: #7d65e6;  /* Dark purple background to fit the main theme */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect for card */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Blur effect on the background when hovering */
+.project-card:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); /* Creates the blur effect */
+    z-index: -1;
+}
+
+/* Project card image */
+.project-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card text */
+.card-text {
+    padding: 20px;
+    color: white;  /* White text inside the card */
+}
+
+/* Heading in card */
+.card-text h3 {
+    margin: 0 0 10px;
+    font-size: 30px;
+    color: #FFBA00;  /* Gold color to maintain consistency with the design */
+}
+
+/* Paragraph text in card */
+.card-text p {
+    font-size: 14px;
+    color: #ffcccb;  /* Light pink text for better contrast */
+}

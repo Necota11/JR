@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do you miss me?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #713779 0%, #1d0a6e 100%);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .wrapper {
+      text-align: center;
+      background-color: rgb(82, 21, 180);
+      padding: 40px 60px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 2;
+      min-width: 300px;
+    }
+
+    #question {
+      font-size: 28px;
+      color: #ff5e78;
+      margin-bottom: 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background-color: #6ee7b7;
+      color: #065f46;
+    }
+
+    #yes:hover {
+      background-color: #34d399;
+    }
+
+    #hinde {
+      background-color: #fca5a5;
+      color: #7f1d1d;
+      position: relative;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #334155;
+      color: #f1f5f9;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="works.html" class="back-button">← Back to Works</a>
+
+  <div class="wrapper" id="box">
+    <p id="question">Do You Miss me?</p>
+    <div class="btn-group">
+      <button class="btn" id="yes">Yes</button>
+      <button class="btn" id="hinde">Nope, Never!</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('hinde');
+    const yesBtn = document.getElementById('yes');
+    const ques = document.getElementById('question');
+
+    yesBtn.addEventListener("click", () => {
+      ques.innerHTML = "I Miss you too &lt;3";
+    });
+
+    noBtn.addEventListener("click", () => {
+      document.body.appendChild(noBtn);
+      const randX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randY = Math.floor(Math.random() * (window.innerHeight - 100));
+      noBtn.style.position = "absolute";
+      noBtn.style.left = randX + "px";
+      noBtn.style.top = randY + "px";
+    });
+  </script>
+
+</body>
+</html>
